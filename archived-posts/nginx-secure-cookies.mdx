@@ -22,7 +22,7 @@ app.use(
     saveUninitialized: false,
     name: 'sid',
     store: new RedisStore({ client: redisClient }),
-    proxy: process.env.NODE_ENV === 'production',
+    proxy: process.env.NODE_ENV === '',
     cookie: {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
