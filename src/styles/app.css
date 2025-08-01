@@ -46,13 +46,14 @@
   }
 
   .section {
-    @apply px-4 max-w-section mx-auto;
+    @apply px-4 max-w-section mx-auto scroll-m-4;
   }
 }
 
 html,
 body {
   height: 100%;
+  scroll-behavior: smooth;
 }
 
 #texture {
