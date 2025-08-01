@@ -3,7 +3,9 @@ import INGLogo from '~/assets/ing-logo.png';
 import ADMULogo from '~/assets/admu-logo.png';
 import { motion, frame, useSpring } from 'motion/react';
 import { useEffect, useRef, useState } from 'react';
-import { client } from 'process';
+import LetterSwapForward from '~/components/letter-swap';
+import { ProjectsSection } from '~/sections/index/projects';
+
 export const Route = createFileRoute('/')({
   component: Home,
 });
@@ -14,12 +16,14 @@ const AnchorWithImage = ({
   altText = '',
   children,
   size: finalSize = 100,
+  label,
 }: {
   href: string;
   imageSrc: string;
   altText?: string;
   children?: React.ReactNode;
   size?: number;
+  label: string;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -81,12 +85,12 @@ const AnchorWithImage = ({
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="underline group-hover:text-accent transition-colors duration-200 italic"
+        className="underline group-hover:text-accent transition-colors duration-200"
       >
-        {children}
+        <LetterSwapForward label={label} className="italic" />
       </motion.a>
       <motion.div
-        className="inline-block w-0 h-0 absolute left-1/2 -translate-1/2 transition-all duration-200 pointer-events-none overflow-hidden bg-white dark:bg-black z-10 rounded border shadow-md"
+        className="z-50 inline-block w-0 h-0 absolute left-1/2 -translate-1/2 transition-all duration-200 pointer-events-none overflow-hidden bg-white dark:bg-white-soft rounded border shadow-md"
         initial={{
           top: finalSize / 2 + 'px',
           opacity: 0,
@@ -104,7 +108,7 @@ const AnchorWithImage = ({
           x: x,
           y: y,
         }}
-        transition={{ duration: 0.2, type: 'tween' }}
+        transition={{ duration: 0.05, type: 'tween' }}
       >
         <motion.img
           src={imageSrc}
@@ -115,19 +119,24 @@ const AnchorWithImage = ({
     </motion.div>
   );
 };
+
 function Home() {
   return (
     <div className="pt-20">
-      <section className="px-8 max-w-5xl mx-auto">
+      <section className="section">
         <h1 className="font-light text-5xl">
           Paolo Tiu<span className="text-accent">.</span>{' '}
         </h1>
 
-        <h2 className="font-extralight text-2xl text-black-soft dark:text-white-soft">
+        <h2 className="font-extralight text-xl text-black-soft dark:text-white-soft">
           <span>Graduate Engineer at </span>
-          <AnchorWithImage href="http://ing.com/" imageSrc={INGLogo} size={150} altText="ING Logo">
-            ING
-          </AnchorWithImage>
+          <AnchorWithImage
+            href="http://ing.com/"
+            imageSrc={INGLogo}
+            size={150}
+            altText="ING Logo"
+            label="ING Hubs"
+          />
           <span>
             , and Part-Time Lecturer at{' '}
             <AnchorWithImage
@@ -135,14 +144,15 @@ function Home() {
               imageSrc={ADMULogo}
               altText="Ateneo de Manila University Logo"
               size={150}
-            >
-              The Ateneo de Manila University
-            </AnchorWithImage>
+              label="The Ateneo de Manila University"
+            />
             .
           </span>
         </h2>
         <div className="inline mt-14 font-body font-light"></div>
       </section>
+      <div className="h-20" />
+      <ProjectsSection />
     </div>
   );
 }

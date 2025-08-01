@@ -16,7 +16,7 @@ const NavLink = ({ to, children }: { to: string; children?: React.ReactNode }) =
 };
 export const Navbar = (props: Props) => {
   return (
-    <div className="w-full p-4 max-w-5xl mx-auto">
+    <div className="w-full p-4 max-w-section mx-auto">
       <div className="flex items-center">
         <img src={LogoDark} alt="" className="h-12 w-auto dark:hidden" />
         <img src={LogoLight} alt="" className="h-12 w-auto hidden dark:block" />
