@@ -17,7 +17,7 @@ export const WritingSection = () => {
             }}
             key={post._meta.path}
           >
-            <li className="rounded-xs hover:bg-gray-300/30 transition-colors px-4 py-4 -mx-4">
+            <li className="rounded-xs hover:bg-gray-300/30 transition-colors px-4 py-2 -mx-4">
               <div>
                 <h2 className="text-lg font-extralight">{post.title}</h2>
               </div>
