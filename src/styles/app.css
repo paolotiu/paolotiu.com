@@ -3,15 +3,16 @@
 
 @theme {
   --color-white: #ffffff;
+  --color-text-white: #fafafa;
   --color-white-soft: #fafafa;
   --color-white-muted: #929292;
   --color-black: #252323;
   --color-black-soft: #474343;
-  --color-black-muted: #5d5b5b;
+  --color-black-muted: #7f7d7d;
   --color-accent: #ed5c14;
   --font-title: 'Argent CF', serif;
   --font-header: 'Argent CF', serif;
-  --font-body: 'Mosk', sans-serif;
+  --font-body: 'Overused Grotesk', sans-serif;
   --container-section: 800px;
 }
 
@@ -23,6 +24,11 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentcolor);
   }
+
+  .duration-initial {
+    transition-duration: 100ms;
+  }
+
   html {
     color-scheme: light dark;
   }

@@ -61,8 +61,8 @@ const ProjectCard = ({ image, title, description, role, year }: (typeof PROJECTS
         </div>
         <span className="text-white-muted dark:text-black-muted">{role}</span>
       </div>
-      <p className="font-light">{description}</p>
-      {/* <div className="border rounded-sm w-fit overflow-hidden relative border-gray-500">
+      <p className="">{description}</p>
+      {/* <div className="border rounded-xs w-fit overflow-hidden relative border-gray-500">
         <img src={image} alt="Project Thumbnail" className="h-48 object-cover aspect-[1.85]" />
       </div> */}
     </div>
@@ -71,12 +71,12 @@ const ProjectCard = ({ image, title, description, role, year }: (typeof PROJECTS
 
 export const ProjectsSection = () => {
   return (
-    <section className="section relative z-10">
+    <section className="section relative z-10" id="projects">
       <div className="flex items-center gap-2">
         <h2 className="font-extralight text-xl italic"> Projects </h2>
         <div className="w-3 bg-accent h-0.5" />
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 mt-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 mt-8">
         {PROJECTS.map((project, index) => (
           <ProjectCard key={index} {...project} />
         ))}

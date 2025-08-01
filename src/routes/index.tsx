@@ -5,6 +5,8 @@ import { motion, frame, useSpring } from 'motion/react';
 import { useEffect, useRef, useState } from 'react';
 import LetterSwapForward from '~/components/letter-swap';
 import { ProjectsSection } from '~/sections/index/projects';
+import { WritingSection } from '~/sections/index/writings';
+import { ContactSection } from '~/sections/index/contact';
 
 export const Route = createFileRoute('/')({
   component: Home,
@@ -90,7 +92,7 @@ const AnchorWithImage = ({
         <LetterSwapForward label={label} className="italic" />
       </motion.a>
       <motion.div
-        className="z-50 inline-block w-0 h-0 absolute left-1/2 -translate-1/2 transition-all duration-200 pointer-events-none overflow-hidden bg-white dark:bg-white-soft rounded border shadow-md"
+        className="z-50 inline-block w-0 h-0 absolute left-1/2 -translate-1/2 transition-all duration-200 pointer-events-none overflow-hidden bg-white dark:bg-white-soft rounded-xs border shadow-md"
         initial={{
           top: finalSize / 2 + 'px',
           opacity: 0,
@@ -122,7 +124,7 @@ const AnchorWithImage = ({
 
 function Home() {
   return (
-    <div className="pt-20">
+    <div className="pt-20 pb-10">
       <section className="section">
         <h1 className="font-light text-5xl">
           Paolo Tiu<span className="text-accent">.</span>{' '}
@@ -153,6 +155,11 @@ function Home() {
       </section>
       <div className="h-20" />
       <ProjectsSection />
+      <div className="h-20" />
+      <WritingSection />
+
+      <div className="h-10" />
+      <ContactSection />
     </div>
   );
 }

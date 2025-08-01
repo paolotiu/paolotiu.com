@@ -62,7 +62,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body className="bg-white dark:bg-black text-black dark:text-white font-body">
+      <body className="bg-white dark:bg-black text-black dark:text-text-white font-body">
         <Navbar />
         <main className="relative">{children}</main>
 

@@ -23,9 +23,9 @@ export const Navbar = (props: Props) => {
         <nav className="font-title font-thin flex items-end justify-between pl-8 gap-4">
           <NavLink to="/">Home</NavLink>
 
-          <NavLink to="/projects">Projects</NavLink>
+          <NavLink to="/#projects">Projects</NavLink>
 
-          <NavLink to="/writing">Writing</NavLink>
+          <NavLink to="/#writing">Writing</NavLink>
         </nav>
       </div>
     </div>
