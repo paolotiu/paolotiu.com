@@ -155,8 +155,8 @@ function Home() {
       </section>
       <div className="h-20" />
       <ProjectsSection />
-      <div className="h-20" />
-      <WritingSection />
+      {/* <div className="h-20" />
+      <WritingSection /> */}
 
       <div className="h-10" />
       <ContactSection />
