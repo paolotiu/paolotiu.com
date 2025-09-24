@@ -25,7 +25,7 @@ export const Navbar = (props: Props) => {
 
           <NavLink to="/#projects">Projects</NavLink>
 
-          <NavLink to="/#writing">Writing</NavLink>
+          {/* <NavLink to="/#writing">Writing</NavLink> */}
         </nav>
       </div>
     </div>
